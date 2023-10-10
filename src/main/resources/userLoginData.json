@@ -1,0 +1,10 @@
+{
+  "success_login_data" : {
+    "email": "eve.holt@reqres.in",
+    "password": "cityslicka"
+  },
+  "bad_request_login_data" : {
+    "email": "eve.holt@reqres.in",
+    "password": "password"
+  }
+}
