@@ -1,0 +1,9 @@
+{
+  "create_resource": {
+    "email": "eve.holt@reqres.in",
+    "password": "pistol"
+  },
+  "resource_bad_request" : {
+    "email": "sydney@fife"
+  }
+}
