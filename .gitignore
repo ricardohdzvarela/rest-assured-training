@@ -26,3 +26,5 @@ replay_pid*
 
 # IntelliJ files
 .idea
+
+test-output/

@@ -1,0 +1,29 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="SuiteReqRes" verbose="1" >
+  <test name="setup">
+    <classes>
+      <class name="Hooks.Hooks" />
+    </classes>
+  </test>
+  <test name="smoke_login" >
+    <groups>
+      <run>
+        <include name="login"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="TestOne" />
+    </classes>
+  </test>
+  <test name="smoke_users" >
+    <groups>
+      <run>
+        <include name="manageUsers"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="TestTwo" />
+    </classes>
+  </test>
+</suite>
