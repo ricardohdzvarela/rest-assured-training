@@ -16,7 +16,7 @@ public class TestTwo {
     JSONObject userData;
     JSONObject resourceData;
 
-    @BeforeClass(groups = {"login", "manageUsers"})
+    @BeforeClass(groups = {"manageUsers"})
     public void setup() {
         JsonDataProviderReader jsonDataProviderReader = new JsonDataProviderReader();
         userData = jsonDataProviderReader.readJsonData("src/main/resources/user/userData.json");
