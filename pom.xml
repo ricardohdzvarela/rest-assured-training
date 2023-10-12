@@ -67,4 +67,19 @@
     </plugins>
   </reporting>
 
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <configuration>
+            <suiteXmlFiles>
+              <suiteXmlFile>src/test/runner/SuiteByClasses.xml</suiteXmlFile>
+            </suiteXmlFiles>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+
 </project>
