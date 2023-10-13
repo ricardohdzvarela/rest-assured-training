@@ -1,6 +1,4 @@
 import io.restassured.RestAssured;
-import io.restassured.filter.log.RequestLoggingFilter;
-import io.restassured.filter.log.ResponseLoggingFilter;
 import io.restassured.http.ContentType;
 import io.restassured.module.jsv.JsonSchemaValidator;
 import java.io.InputStream;
@@ -19,6 +17,7 @@ public class TestTwo {
     @BeforeClass(groups = {"manageUsers"})
     public void setup() {
         JsonDataProviderReader jsonDataProviderReader = new JsonDataProviderReader();
+
         userData = jsonDataProviderReader.readJsonData("src/main/resources/user/userData.json");
         resourceData = jsonDataProviderReader.readJsonData("src/main/resources/resource/resourceData.json");
     }
@@ -104,6 +103,7 @@ public class TestTwo {
     @Test(groups = {"manageUsers"})
     public void testCreateUser() {
         JSONObject createUserData = (JSONObject) userData.get("create_user");
+
         RestAssured.given()
             .contentType(ContentType.JSON)
             .body(createUserData.toJSONString())
@@ -118,6 +118,7 @@ public class TestTwo {
     public void testPatchUser() {
         InputStream updateUserSchema = getClass().getClassLoader()
             .getResourceAsStream("responseSchemas/updateUserSchemaResponse.json");
+
         JSONObject updateUserData = (JSONObject) userData.get("update_user");
 
         RestAssured.given()
@@ -135,6 +136,7 @@ public class TestTwo {
     public void testUpdateUser() {
         InputStream updateUserSchema = getClass().getClassLoader()
             .getResourceAsStream("responseSchemas/updateUserSchemaResponse.json");
+
         JSONObject updateUserData = (JSONObject) userData.get("update_user");
 
         RestAssured.given()
@@ -161,6 +163,7 @@ public class TestTwo {
     public void testPostRegisterSuccessful() {
         InputStream postRegisterSchema = getClass().getClassLoader()
             .getResourceAsStream("responseSchemas/postRegisterSchemaResponse.json");
+
         JSONObject createResource = (JSONObject) resourceData.get("create_resource");
 
         RestAssured.given()
